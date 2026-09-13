@@ -1,0 +1,39 @@
+# Project memory: local only, never committed
+MEMORY.md
+MEMORY.*.md
+memory/
+
+# Secrets and local config
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.uv/
+*.egg-info/
+dist/
+build/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Benchmarks and runtime data (results are committed only under docs/benchmarks)
+data/
+*.db
+*.sqlite
+
+# Node (future dashboard)
+node_modules/
+
+# Editors and OS
+.vscode/
+.idea/
+.DS_Store
