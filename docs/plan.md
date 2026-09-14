@@ -96,7 +96,7 @@ from the OpenAPI spec is optional, after v1.0, only if the dashboard or a user n
 ### 4.5 MCP server
 
 An MCP server that exposes Loomrun's read and admin operations as tools: status, ledger queries,
-budgets, placement decisions, bench trigger. Purpose: Claude Code, Codex or any MCP client can
+budgets, placement decisions, bench trigger. Purpose: an MCP client, Codex or any MCP client can
 inspect and operate the box in conversation. Arrives in Phase 6, once status, ledger, callers and
 budgets all exist, so the tool set is complete on day one. Read tools are free; write tools
 (budgets, callers) require a confirmation flag. Built with the official Python MCP SDK. Loomrun
@@ -240,7 +240,7 @@ document. Exit criteria must be met before the next phase starts.
 | Exercise | A budget policy as a pure function: given caller state and request, return allow, degrade with a step, or stop with a reason. Table-driven tests. |
 | Build | Per-caller token and time budgets, degradation ladder (smaller model, shorter context, stop with partial and reason), `loomrun budgets`, Angular console, MCP server |
 | Measure | Requests that would have failed hard vs completed degraded. Console and MCP show the same numbers as the ledger. |
-| Exit | A runaway caller is contained without affecting others. Claude Code can inspect the box through MCP. |
+| Exit | A runaway caller is contained without affecting others. An MCP client can inspect the box. |
 
 ### Phase 7: Second worker
 

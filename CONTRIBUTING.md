@@ -4,6 +4,8 @@ Loomrun is at the planning stage. Discussion and issues are welcome; code contri
 useful from v0.1.0.
 
 ## Ground rules
+Read [docs/working-agreement.md](docs/working-agreement.md) first.
+
 - Every capability enters through a roadmap phase whose measurement asked for it. Propose the
   measurement first.
 - No number in any document unless it came from a real run, with the hardware named.

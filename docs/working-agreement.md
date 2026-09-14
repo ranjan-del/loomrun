@@ -1,4 +1,4 @@
-# Loomrun: working agreement
+# Working agreement
 
 Loomrun is a learn-and-build project. The point is to understand the execution layer under AI
 applications by building a small, measured, documented tool that a small team can actually use.
@@ -20,9 +20,9 @@ applications by building a small, measured, documented tool that a small team ca
 
 ## Local memory
 `MEMORY.md` at the repo root is the running project memory: context, decisions, open questions,
-what happened in each session. It is gitignored and stays on this machine. Read it at the start of
-a session and append to it at the end.
+what happened in each session. It is gitignored and stays on the engineer's machine. Any assistant
+or collaborator working on the project reads it at the start of a session and appends to it at the end.
 
 ## Git
 Feature branches for all work. No commit, push, merge or release without the engineer's explicit
-go-ahead in the current conversation.
+go-ahead in the current conversation. Commit messages carry no tool attribution trailers.
