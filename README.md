@@ -106,8 +106,9 @@ See [ROADMAP.md](ROADMAP.md) for detail and status.
 
 ## Contributing
 
-The project is at the planning stage. Issues and discussion are welcome. Contribution guidelines
-will be added when there is code to contribute to.
+The project is at the planning stage. Issues and discussion are welcome. See
+[CONTRIBUTING.md](CONTRIBUTING.md) for ground rules and the development setup, and
+[docs/plan.md](docs/plan.md) for the full plan with learning goals per phase.
 
 ## License
 

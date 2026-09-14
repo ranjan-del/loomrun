@@ -1,0 +1,55 @@
+# Loomrun local stack. The inference engine (Ollama) runs on the host so it can use the
+# Apple Silicon GPU; containers reach it at host.docker.internal:11434.
+#
+#   lite     Postgres + Redis                      (Phase 1 and 2)
+#   observe  adds Prometheus + Grafana             (Phase 2)
+#
+# Ports are offset (5433, 6380) so they do not collide with local installs.
+name: loomrun
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    profiles: ["lite", "observe"]
+    environment:
+      POSTGRES_USER: loomrun
+      POSTGRES_PASSWORD: loomrun
+      POSTGRES_DB: loomrun
+    ports: ["5433:5432"]
+    volumes: ["pgdata:/var/lib/postgresql/data"]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U loomrun -d loomrun"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  redis:
+    image: redis:7-alpine
+    profiles: ["lite", "observe"]
+    command: ["redis-server", "--save", "", "--appendonly", "no"]
+    ports: ["6380:6379"]
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  prometheus:
+    image: prom/prometheus:v2.54.1
+    profiles: ["observe"]
+    volumes: ["./prometheus.yml:/etc/prometheus/prometheus.yml:ro"]
+    ports: ["9090:9090"]
+    extra_hosts: ["host.docker.internal:host-gateway"]
+
+  grafana:
+    image: grafana/grafana:11.2.0
+    profiles: ["observe"]
+    environment:
+      GF_AUTH_ANONYMOUS_ENABLED: "true"
+      GF_AUTH_ANONYMOUS_ORG_ROLE: Admin
+    volumes: ["./grafana:/etc/grafana/provisioning:ro"]
+    ports: ["3000:3000"]
+    depends_on: [prometheus]
+
+volumes:
+  pgdata:
