@@ -12,6 +12,10 @@ Read [docs/working-agreement.md](docs/working-agreement.md) first.
 - No feature described as shipped unless `ROADMAP.md` marks it shipped.
 - Decisions get an ADR in `docs/decisions/`.
 
+## Pull requests
+Fork, branch, open a pull request against `main`. CI (ruff, mypy, pytest) must pass. Keep one
+change per pull request and say which roadmap phase it belongs to.
+
 ## Development
 ```
 make setup      # python 3.12 via uv, all dependencies

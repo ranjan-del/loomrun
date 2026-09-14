@@ -24,5 +24,7 @@ what happened in each session. It is gitignored and stays on the engineer's mach
 or collaborator working on the project reads it at the start of a session and appends to it at the end.
 
 ## Git
-Feature branches for all work. No commit, push, merge or release without the engineer's explicit
-go-ahead in the current conversation. Commit messages carry no tool attribution trailers.
+The maintainer commits, pushes and merges to `main` directly; feature branches are used when work
+spans more than one sitting. Everyone else contributes through pull requests. `main` is protected:
+CI must pass, force pushes and deletion are blocked, and review conversations must be resolved
+before merge. Commit messages carry no tool attribution trailers.
