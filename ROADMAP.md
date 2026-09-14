@@ -17,9 +17,9 @@ Phases 0 to 6 run on a single machine. Phase 7 needs a second machine or contain
 Each phase ends with a measured before-and-after result recorded under `docs/benchmarks/`.
 
 ## Phase 0: Landscape and baseline
-- [ ] `docs/landscape.md`: what Ollama, llama-swap, vLLM, Ray Serve and LiteLLM do and do not do, with tested facts
-- [ ] `docs/problem.md`: one page problem statement and non-goals
-- [ ] Install Ollama, pull tiny, small and medium models
+- [~] `docs/landscape.md`: drafted from documentation on 2026-09-14; tested facts still to add
+- [x] `docs/problem.md`: one page problem statement and non-goals
+- [~] Install Ollama (done, 0.34.0), pull tiny, small and medium models (in progress)
 - [ ] Load test script against bare Ollama (`bench/`), written by the engineer as the Phase 0 exercise
 - [ ] Baseline numbers on the target hardware: time to first token, tokens per second, p50 and p95 latency at 1, 4 and 16 concurrent clients
 
