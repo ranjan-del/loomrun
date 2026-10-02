@@ -104,6 +104,23 @@ See [ROADMAP.md](ROADMAP.md) for detail and status.
 - **Teach as you go.** Each component documents what it does, why it exists, what the alternatives
   were and which trade-off was taken. Decisions live in [docs/decisions](docs/decisions/).
 
+## Project documentation
+
+Every flagship repository documents the same ten things. Status shows what exists today.
+
+| Section | Document | Status |
+|---|---|---|
+| README | [README.md](README.md) | Written |
+| Architecture | [docs/architecture.md](docs/architecture.md) | Partial |
+| Design decisions | [docs/decisions/](docs/decisions/) | Written |
+| Benchmarks | [docs/benchmarks.md](docs/benchmarks.md) | To be written |
+| Failure cases | [docs/failure-cases.md](docs/failure-cases.md) | To be written |
+| Evaluation | [docs/evaluation.md](docs/evaluation.md) | To be written |
+| Trade-offs | [docs/trade-offs.md](docs/trade-offs.md) | Partial |
+| Deployment | [docs/deployment.md](docs/deployment.md) | To be written |
+| Cost | [docs/cost.md](docs/cost.md) | To be written |
+| Future work | [ROADMAP.md](ROADMAP.md) | Written |
+
 ## Contributing
 
 The project is at the planning stage. Issues and discussion are welcome. See
